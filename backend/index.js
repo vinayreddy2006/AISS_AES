@@ -21,6 +21,7 @@ import hodRouter from "./routes/hodRoutes.js";
 import collegeAdminRouter from "./routes/collegeAdminRoutes.js";
 import timetableRoutes from "./routes/timeTableRoutes.js";
 import questionPaperRoutes from "./routes/questionPaperRoutes.js";
+import collegeRouter from "./routes/collegeRoutes.js";
 
 const PORT = 5000;
 connectDB();
@@ -40,6 +41,7 @@ app.use(cors({
 app.use(express.json());
 app.use(cookieParser());
 
+app.use("/college/",collegeRouter);
 app.use("/faculty/auth", facultyAuthRouter);
 app.use("/faculty", facultyRouter);
 app.use("/faculty/hod",hodRouter);
